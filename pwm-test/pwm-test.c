@@ -20,10 +20,10 @@ int main() {
     // Find out which PWM slice is connected to GPIO 0 (it's slice 0)
     uint slice_num = pwm_gpio_to_slice_num(0);
     // set clock divider to 1, then frequency is 125 MHz
-    pwm_set_clkdiv(slice_num, 1); // maximum value here is 256
+    pwm_set_clkdiv(slice_num, 1);
 
     // Set period number of cycles for 100 kHz output
-    // period= 125e6/100e5 = 1250
+    // period= 125e6/100e3 = 1250
     int period=1250;
     pwm_set_wrap(slice_num, period);
     // Set channel A output high for a number of cycles
